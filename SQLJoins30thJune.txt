@@ -1,0 +1,91 @@
+insert into Books (StudentId,BookName)
+values (1,'SQL')
+-- inserting value for default column
+insert into Books values (1,'HTML',default)
+
+Joins
+Relating more than two entities on a common column
+Student -- studentid
+Books -- studentid
+
+Types of Joins
+1. inner join :- default join type 
+	retrieves the matching records only from specified entities on a 
+	common column.
+Scenario-1   retrieve the data of students issued books
+select s.Studentid,Studentname,Bookname
+from Students s join Books b
+on s.Studentid=b.StudentId
+
+2. Outer join 
+	a. Left outer join :- it retrieves all (matching as well as non-matching records) from left table and matching records only from right table.
+
+Scenario-2  retrieve the data of all students in addition with book details.
+select s.Studentid,Studentname,Bookname
+from Students s left outer join Books b
+on s.Studentid=b.StudentId
+
+
+select s.Studentid,Studentname,Bookname
+from Students s right outer join Books b
+on s.Studentid=b.StudentId
+
+-- drop foreign key
+alter table Books
+drop Constraint fkStudId
+
+--dummy entry
+insert into Books values (1000,'Excel',default)
+
+Scenario 3 :- Retrieve all the records (matching as well as non matching )from specified entities.
+select s.Studentid,Studentname,Bookname
+from Students s full outer join Books b
+on s.Studentid=b.StudentId
+
+======================== 
+alter table Books
+add constraint fksid foreign key (StudentId) references Students(Studentid)
+
+-- remove the record (delete)
+delete 
+from Books
+where StudentId=1000
+
+
+
+
+=====================================
+1. Create a new database
+	Create database Sample 		--ddl
+2. Use your database (Select your database)
+3. Create a table with some columns
+4. Insert some records in a table.
+5. Delete any record from that table.
+
+=========================================================
+
+Refer AdventureWorks for Joins
+
+
+-- retrieve employeeid, title whose pay rate is > 40
+Select emp.BusinessEntityID, JobTitle, Rate
+from HumanResources.Employee emp inner join
+HumanResources.EmployeePayHistory eph
+on emp.BusinessEntityID=eph.BusinessEntityID
+where Rate>40
+
+
+Details of special offer products. in addition
+--also display the productid of the special offer product 
+--for which no transaction has been done.
+
+select Distinct sp.ProductID, sd.SpecialOfferID, UnitPrice
+from Sales.SpecialOfferProduct sp 
+left outer join
+Sales.SalesOrderDetail sd
+on sp.ProductID=sd.ProductID
+
+
+For Right and Full outer join
+Sales.SalesTerritory  and Sales.SalesPerson
+

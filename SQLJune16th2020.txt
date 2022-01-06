@@ -1,0 +1,141 @@
+PROJECTION
+RESTRICTION
+
+
+============================
+SELECT COLUMN1,COLUMN3,....
+FROM TABLENAME
+
+============== cOMPLETE DETAILS
+SELECT * 
+FROM TABLENAME
+WHERE 
+
+================== SYNTAX OF WHERE CLAUSE
+
+where fieldname   operator   expression
+					numeric
+					'character'
+					'date'
+List of Operators
+
+1. Relational operator -- Comparison Operator
+> < >= <= <> =
+
+2. Logical operator
+
+and :- all the conditions must be satisfied
+or  :- any of the condition to satisfy
+
+3. Range Operator
+between				lowerlimit -- upper limit (inclusive)
+not between
+
+4. List Operator
+ in
+not in
+
+5. Nullable Operator
+is null
+is not null
+
+6. Pattern matching Search
+like		
+not like
+		Wild Card Characters 
+		%    :- substituting unknown characters or missing characters
+		_    :- substituting unknown or missing single character
+		[]   :- range of 
+		[^ ] :- not in a range of ...
+
+use AdventureWorks2012
+
+-- Restriction
+select *
+from HumanResources.Employee
+where Gender = 'M'
+
+-- records of Married Male employees
+and
+1 0  0
+1 1  1
+0 1  0
+0 0  0
+
+select BusinessEntityID, JobTitle , BirthDate
+from HumanResources.Employee
+where Gender='M' and MaritalStatus='M'
+
+
+-- gender = m or Jobtitle='Stocker'
+
+
+OR
+1  1	1
+1  0    1
+0  1    1
+0  0    0
+
+select *
+from HumanResources.Employee
+where Gender='M' or JobTitle='Stocker'
+
+select *
+from HumanResources.Employee
+where VacationHours>=50 and VacationHours<=80
+
+-- between operator
+select  *
+from HumanResources.Employee
+where VacationHours between 50 and 80
+
+-- Tool designer and stocker
+select *
+from HumanResources.Employee
+where JobTitle ='Tool Designer' or JobTitle='Stocker' or 
+JobTitle='Design Engineer'
+
+select *
+from HumanResources.Employee
+where JobTitle in ('Tool Designer','Design Engineer','Stocker')
+
+select *
+from Sales.SalesOrderHeader
+where PurchaseOrderNumber is not null
+
+
+-- Jobtitle begins with S
+select *
+from HumanResources.Employee
+where JobTitle like 'S%'
+
+-- Jobtitle ends with ion
+select *
+from HumanResources.Employee
+where JobTitle like '%ion'
+
+--Jobtitle containing cru(any position)
+select *
+from HumanResources.Employee
+where JobTitle like '%cru%'
+
+--Jobtitle begins with R ends with R
+select *
+from HumanResources.Employee
+where JobTitle like 'R%' and JobTitle like '%r'
+----- alternate
+select *
+from HumanResources.Employee
+where JobTitle like 'R%r'
+
+-- jobtitle first letter S , fifth letter k (2,3,4 and 6th onwards are missing)
+select *
+from HumanResources.Employee
+where JobTitle like 'S___k%'
+
+-- Jobtitle first letter begins with M - P
+select *
+from HumanResources.Employee
+where JobTitle  like '[M-P]%'
+
+

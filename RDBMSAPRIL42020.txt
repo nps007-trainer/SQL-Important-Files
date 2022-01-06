@@ -1,0 +1,135 @@
+full stack software engineering -- TERM2
+mODULAR STUDENTS  :- TSQL 
+RDBMS :- Relational Database Management System
+PAMS :- PRODUCTION APPLICATION AND MANAGEMENT SUPPORT
+
+DATA :- COLLECTION OF RAW FACTS AND FIGURES. (YOUR PHONE NUMBER)
+DATABASE :- COLLECTION OF INFORMATION IN THE FORM OF OBJECTS. (WHATSAPP GROUP)
+		SKYPE GROUP..
+WHY DATA IS REQUIRED , WHY TO STORE THE DATA :- WE NEED TO FETCH ANY OF THE RECORD FROM THE COLLECTION OF RECORDS.
+
+
+DBMS :- Database Manageement System. It is a tool for organizing the data.
+
+Database Objects :- Tables, Views, Stored procedure, functions, triggers, .....
+
+
+
+SMARTPHONE :- DATABASE 
+		COLLECTION OF OBJECTS
+			CONTACTS, WHATSAPP, HIKE, FB.....
+		SYNC :- STORAGE OF DATA ON OTHER SERVER END (BACKUP)
+TOOL USED FOR STORING THE DATA IS ANY RDBMS APPLICATION.
+
+MS SQLSERVER, ORACLE, SYBASE, DBASE, MYSQL.....
+
+MS SQLServer IS A RDBMS APPLICATION FOR STORING THE DATA AND WORKING ON THE DATA .
+
+Categories 
+DQL :- Data Query Language  (Select   :-  query )
+DML :- Data manipulation Language (Insert, Update, delete) / action queries
+DDL :- Data Definition Language (Create, Alter, Truncate and Drop)
+DCL :- Data Control Language (commit, rollback)
+
+
+-------------- Nandini Contact is already saved 
+		
+			Add anothre number , add my email id and also add 					event
+
+1. Modify the structure by adding all the above fields
+		Alter statement
+2. Add the values in the new fields
+		 Update 
+
+3. Ask to permanently delete my record
+	Delete  :- deleting a record
+4. Drop :- to remove or delete an object (complete structure with the data)
+
+Truncate :- is similar to delete but truncate , deletes or removes all the records from a table without impacting the structure
+		there is no chance of revert.
+ 
+Delete :- deltes the specified record as per user's requirements 
+		can be recovered
+
+
+
+SQL :- Structured Query Language.
+Contact app :- 1. created a new contact
+Operations after contact gets created
+1. Retrieving -- sending message
+2. Deleting 
+3. Modifying -- name , number , emailid, or you want to add certain other parameters.
+
+--Operations like
+1. Createing a contact, Retrieving the information, Modifying (Delete and Update)
+
+Why WE ARE LEARNING SQL SERVER?
+	STORING, RETRIEVING, UPDATING,DELETING,CONNECTING....
+	HELPS AS A BACK-END FOR DATABASE APPLICATIONS, OR DATABASE WEB APPLICATIONS.
+	WHATSAPP , SKYPE , FB, GMAIL, ECOMMERCE.
+
+DATABASE IS A COLLECTION OF INFORMATION IN THE FORM OF OBJECTS.
+	OBJECTS  :- TABLES, VIEWS, STORED PROCEDURES, TRIGGERS, INDEXES, FUNCTIONS,....
+
+TABLE :- IS COLLECTION OF ROWS AND COLUMNS.
+
+TERMINOLOGY IN RDBMS
+TABLE		ENTITY / RELATION
+ROWS		TUPLES / RECORDS
+COLUMNS	ATTRIBUTES / FIELDS
+
+AS PER OUR EXAMPLE
+
+TABLE / ENTITY			STUDENT 
+FIELDS / ATTRIBUTES			**STUDENTID, STUDENTNAME,MARKS,AGE,ROLLNO
+							**  --   UNIQUE COLUMN -- NO DUPLICATE VALUES IN THIS COLUMN
+				COURSE
+					**COURSEID , ***STUDENTID , COURSENAME, FEES, COURSEDURATION
+							** COURSEID -- UNIQUE COLUMN - EVERY COURSE WILL HAVE UNIQUE COURSEID
+							*** STUDENTID -- ONE STUDENT CAN ENROLL FOR MULTIPLE COURSES.
+
+		
+
+
+================================= TASK 1
+			UNDERSTANDING ER MODELING YOU TO SHARE DIFFERENT EXAMPLES ON ER MODELING.
+			AND WHO INVENTED ER MODELING.
+
+
+IF YOUR ENTITY CONTAINS MULTIPLE NON-RELEVANT ATTRIBUTES / COLUMNS THEN 						
+IT WILL LEAD TO DATA REDUNDANCY (DUPLICATION)						
+IT WILL LEAD TO DATA INCONSISTENCY.						
+THE COLUMNS OF A TABLE ARE NOT ENTIRELY DEPENDENT ON EACH OTHER						
+						
+BREAKING DOWN THE COMPLEX DATA STRUCTURE INTO SIMPLER SMALLER TABLES IS CALLED AS 						
+	NORMALIZATION.					
+
+1NF -  FIRST NORMAL FORM 
+	EVERY CELL MUST CONTAIN PRECISELY ONLY ONE VALUE IN IT.
+2NF - SECOND NORMAL FORM
+	EVERY COLUMN MUST BE DEPENDENT ON EACH OTHER
+3NF - THIRD NORMAL FORM
+	EVERY NON-KEY MUST BE DEPENDENT ON WHOLE KEY NOT JUST THE PART OF THE KEY.
+
+======================================= TASK 2
+	
+	NORMALIZATION AND DENORMALIZATION
+
+======================================== TASK 3
+
+	BCNF :- BOYCCODE NORMAL FORM.
+
+======================================= REFERENCE -- ONLINE COURSEWARE
+
+			RDBMS -- CHP1 AND CHP 2		
+
+			S191050400012			3 page
+			Harsha123
+
+ 
+				
+
+ 
+
+
+	 

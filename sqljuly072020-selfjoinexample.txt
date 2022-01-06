@@ -1,0 +1,72 @@
+Training.com  (Mahesh)
+1. group  NIITDADAR - OnlineSQL
+2. add every one in the group of this batch
+3. Discussion Forum
+	Add your completed activites -- given by me
+		like ddl , dml,   
+
+
+
+for other students
+participate in discussion forum upload your activities, task
+
+
+
+================================================ 
+3 steps for Table partitioning
+1. Create a Partition function
+2. Create a partition scheme
+3. Creating a table on partition scheme
+
+=============================== Ranking functions
+(Marks 89 72 71 70 70 69 63 63 62)
+row_number()  :- is to generate sequential numbers (1,2,3,4,5,6,7,8,9)
+rank()  :- is to generate rank based on particular column   -- (1,2,3,4,4,6,7,7,9)
+dense_rank() :- is to generate consecutive numbers based on particular column (1,2,3,4,4,5,6,6,7)
+		Use HumanResources.EmployeePayHistory Table perform Ranking functions on Rate column
+
+
+-- Ranking function
+select sales,
+ROW_NUMBER() over(order by Sales desc) 'Sequence',
+RANK() over(order by Sales desc) 'Ranking',
+DENSE_RANK() over(order by Sales desc) 'Consecutive'
+from EmpSales
+===================================Analytical functions
+it is to get statistical information from raw facts and figures
+		The column used for Statistics		(Total sales)
+			the column used for analysis		based on Month
+
+I want to compare previous month data with current month   ---  lag
+I want to compare current month data with next month  -- lead
+First_Value()
+Last_Value()
+=============================== Month wise total sales
+select month,sum(sales)
+from EmpSales
+group by month
+=================================Month wise total sales comparing with previous and next month data
+Select month,sum(Sales) 'Current sales',
+LEAD(sum(sales),1) over(order by month) 'Next Month',
+lag(sum(sales),1) over (order  by month) 'Previous Month'
+from EmpSales
+group by month
+
+========================  Self Join
+Create a table Employee
+		employeeid int
+		employeename varchar(20)
+		supervisor int
+
+employeeid --  id to n employee
+supervisor -- is also an employee
+-----  Self join  :- is a join with itself 
+		--	A table joining with itself by using multiple instances of it 
+		-- by assigning different alias name
+select * from Employee
+select emp.employeeid, emp.empname, sup.empname,sup.supervisor
+from Employee emp , Employee sup
+where emp.supervisor=sup.employeeid
+
+
+
